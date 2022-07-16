@@ -90,16 +90,6 @@ public class AmazonProductListPage {
         }
     }
 
-/* DELETE
-    public void filter_CustomerReviews4_click(){
-        try {
-            driver.findElement(customerReviews_4).click();
-            Thread.sleep(3000);
-        } catch (Exception e){
-            System.out.println("Exceptions Caught" + e.getMessage());
-        }
-    }
-*/
     public void filter_CustomerReview_SelectStarsByNum (int stars){
         By customerReviews_Stars = By.cssSelector("i.a-icon.a-icon-star-medium.a-star-medium-"+stars);
         try {

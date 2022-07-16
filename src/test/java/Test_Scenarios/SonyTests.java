@@ -1,5 +1,6 @@
 package Test_Scenarios;
 
+import Objects.AmazonHomepage;
 import Objects.AmazonNavigation;
 import Objects.AmazonProductListPage;
 import Objects.AmazonProductPage;
@@ -27,7 +28,7 @@ import java.util.concurrent.TimeUnit;
  *      1. Use cssSelector instead of xpath - V
  *      2. change name of functions to more specific
  *      3. Log before every function (check about logger)
- *      4. wait instead of Thread.sleep
+ *      4. wait instead of Thread.sleep - Not working - tried with driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); - not waiting
  *      5. Check about HashMap
  *
  */
@@ -65,7 +66,6 @@ public class SonyTests {
         // Actions
         AmazonNavigation navigation = new AmazonNavigation(driver); // Object
         navigation.search("Sony");
-
 
         // Tests
         AmazonProductListPage ProductListPage = new AmazonProductListPage(driver); // Object

@@ -102,7 +102,7 @@ public class AmazonProductPage {
      * @return Title text
      */
     public String title_GetText_toLowerCase(){
-            return driver.findElement(title).getText().toLowerCase();
+        return driver.findElement(title).getText().toLowerCase();
     }
 
     public String color_Selected(){
@@ -111,5 +111,3 @@ public class AmazonProductPage {
 
 
 } // End of class
-
-

@@ -58,6 +58,8 @@ public class A_Sheets {
         ProductListPage.filter_CustomerReviews4_click();
     }
     */
+
+    /*
     @Test(priority = 3) // Test 3
     // Filter customer review, 4 stars and up (Filter not saved on Amazon site
     public void filter_CustomerReview_4 () {
@@ -68,6 +70,7 @@ public class A_Sheets {
         // Tests
         Assert.assertEquals(ProductListPage.searchResults_Summary(), "10 results for"); // 1. Checking if searched result has been updated after selecting 4 stars
     }
+     */
     /*
     @Test
     public void test4(){

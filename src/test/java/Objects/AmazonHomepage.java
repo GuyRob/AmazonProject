@@ -1,5 +1,10 @@
 package Objects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import java.util.Scanner;
+
 /**
  *  * Need to check openU about the correct spell
  *   @check_about_this
@@ -24,4 +29,22 @@ package Objects;
  *   • Actions:
  */
 public class AmazonHomepage {
-}
+    WebDriver driver;
+
+    /** Constructor */
+
+    /**
+     * @param driver - Assign driver to object
+     */
+    public AmazonHomepage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    /** By */
+
+
+    /** Actions: */
+
+
+} // End of class
+
