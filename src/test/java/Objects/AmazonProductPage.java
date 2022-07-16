@@ -93,6 +93,17 @@ public class AmazonProductPage {
 
     }
 
+    public void purchase_AddToCart_ByID (int id){
+        By addtocart_id = By.xpath("//span[@id='a-autoid-2-offer-" + id + "']");
+        try {
+            driver.findElement(addtocart_id).click();
+            Thread.sleep(3000);
+        } catch (Exception exception){
+            System.out.println("Exception is: " + exception);
+        }
+
+    }
+
 
     /**     Getters - Getting info*/
     // Product
@@ -108,6 +119,5 @@ public class AmazonProductPage {
     public String color_Selected(){
         return driver.findElement(color_Selected).getText();
     }
-
 
 } // End of class

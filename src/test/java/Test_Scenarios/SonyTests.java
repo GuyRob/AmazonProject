@@ -147,10 +147,17 @@ public class SonyTests {
     }
 
     @Test (priority = 7) // Test 7
-    // Selecting product image
+    // Selecting "See All Buying Options"
     public void product_AllBuyOptions(){
         AmazonProductPage ProductPage = new AmazonProductPage(driver); // Object
         ProductPage.purchase_AllBuyOptions();
+    }
+
+    @Test (priority = 8) // Test 8
+    // Adding product to cart
+    public void product_AddToCart(){
+        AmazonProductPage ProductPage = new AmazonProductPage(driver); // Object
+        ProductPage.purchase_AddToCart_ByID(1);
     }
 
 } // End of class
