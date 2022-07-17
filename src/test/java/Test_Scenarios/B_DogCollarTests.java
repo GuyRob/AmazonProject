@@ -12,9 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
- *                                          Amazon Web
- *    • Page Object Model - working with objects instead of find elements on tests
- *    Dog Collar Tests:
+ *         Dog Collar Tests:
  *
  *    Tests:
  *      0. Searching for "Dog" product on amazon web, clicking, and checking the search result
@@ -50,9 +48,7 @@ public class B_DogCollarTests {
 
     }
 
-    /**
-     * Tests:
-     */
+    /** Tests:*/
     @Test(priority = 0) //Test 0
     // Homepage to "Dog" search
     public void searchDog() {
@@ -67,10 +63,10 @@ public class B_DogCollarTests {
     }
 
     @Test(priority = 1) //Test 1
-    // @TODO Filter dog supplies
+    // Filter dog supplies
     public void filter_DogSupplies() {
         AmazonProductListPage ProductListPage = new AmazonProductListPage(driver); // Object
-        //ProductListPage.filter_DogSupplies_click();
+        ProductListPage.filter_Department_DogSupplies_click();
 
         // Tests
         Assert.assertEquals(ProductListPage.searchResults_Summary(), "1-24 of over 50,000 results for"); // 1. Checking total results
@@ -78,17 +74,17 @@ public class B_DogCollarTests {
     }
 
     @Test(priority = 2) //Test 2
-    // @TODO Filter price up to 25
+    // Filter price up to 25
     public void filter_Price_Upto25() {
         AmazonProductListPage ProductListPage = new AmazonProductListPage(driver); // Object
-        //ProductListPage.filter_Price_clickByLinkText("Up to $25");
+        ProductListPage.filter_price_clickByText("Up to $25");
 
         // Tests
-        //Assert.assertTrue(ProductListPage.filter_AnyPrice_isDisplayed()); // 1. Checking if Any Price button appears
+        Assert.assertTrue(ProductListPage.filter_AnyPrice_isDisplayed()); // 1. Checking if Any Price button appears
     }
 
     @Test(priority = 3) // Test 3
-    // @TODO Selecting product by "collar" text
+    // @TODO (In progress) Selecting product by "dog collar" text
     public void product_SelectCollar() {
         AmazonProductListPage ProductListPage = new AmazonProductListPage(driver); // Object
         //ProductListPage.product_Click_FirstByText("Collar"");

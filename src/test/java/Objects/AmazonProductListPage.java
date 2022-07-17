@@ -2,6 +2,7 @@ package Objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  *  * Need to check openU about the correct spell
@@ -25,12 +26,6 @@ public class AmazonProductListPage {
     WebDriver driver;
 
     /** Constructors */
-
-    /**
-     * Need to check openU about the correct spell
-     *
-     * @param driver - Assign driver to object
-     */
     public AmazonProductListPage(WebDriver driver){
         this.driver = driver;
     }
@@ -41,8 +36,10 @@ public class AmazonProductListPage {
 
     By department_Electronics = By.linkText("Electronics"); // OK
     By department_AnyDeparment = By.linkText("Any Department"); // OK
+    By department_DogSupplies = By.linkText("Dog Supplies"); // OK
 
-    //By customerReviews_4 = By.xpath("//i[@class='a-icon a-icon-star-medium a-star-medium-4']"); // DELETE
+    By price_AnyPrice = By.linkText("Any Price");
+
 
     // Search Result
     By search_result_Text = By.xpath("//span[@class='a-color-state a-text-bold']"); // OK - Must use xpath
@@ -81,9 +78,18 @@ public class AmazonProductListPage {
     }
 
     /** On filter section (left side), clicking on Department - Electronics */
-    public void filter_Electronics_click(){
+    public void filter_Department_Electronics_click(){
         try {
             driver.findElement(department_Electronics).click();
+            Thread.sleep(5000);
+        } catch (Exception e){
+            System.out.println("Exceptions Caught" + e.getMessage());
+        }
+    }
+
+    public void filter_Department_DogSupplies_click(){
+        try {
+            driver.findElement(department_DogSupplies).click();
             Thread.sleep(5000);
         } catch (Exception e){
             System.out.println("Exceptions Caught" + e.getMessage());
@@ -94,6 +100,17 @@ public class AmazonProductListPage {
         By customerReviews_Stars = By.cssSelector("i.a-icon.a-icon-star-medium.a-star-medium-"+stars);
         try {
             driver.findElement(customerReviews_Stars).click();
+            Thread.sleep(3000);
+        } catch (Exception e){
+            System.out.println("Exceptions Caught" + e.getMessage());
+        }
+    }
+
+
+    public void filter_price_clickByText(String price){
+        By priceByStr = By.linkText(price);
+        try {
+            driver.findElement(priceByStr).click();
             Thread.sleep(3000);
         } catch (Exception e){
             System.out.println("Exceptions Caught" + e.getMessage());
@@ -114,6 +131,19 @@ public class AmazonProductListPage {
 
     }
 
+    // @TODO - Alot of link text found - can try this: https://stackoverflow.com/questions/64033047/selenium-how-to-select-first-option-if-page-has-multiple-select-box-using-python
+    public void product_Click_FirstByText(String text){
+        By productSelectByText = By.partialLinkText(text);
+
+        try {
+            driver.findElement(productSelectByText).click();
+            Thread.sleep(3000);
+        } catch (Exception e){
+            System.out.println("Exceptions Caught" + e.getMessage());
+        }
+
+    }
+
     /**     Getters - Getting info*/
 
     // Filter
@@ -126,6 +156,10 @@ public class AmazonProductListPage {
 
     public boolean filter_AnyDepartment_isDisplayed(){
         return driver.findElement(department_AnyDeparment).isDisplayed(); // return: true/false
+    }
+
+    public boolean filter_AnyPrice_isDisplayed(){
+        return driver.findElement(price_AnyPrice).isDisplayed(); // return: true/false
     }
 
 

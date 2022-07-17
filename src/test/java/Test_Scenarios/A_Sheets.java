@@ -121,4 +121,36 @@ public class A_Sheets {
     }
      */
 
+
+    /* Dog supplies*/
+    /*
+    @Test(priority = 1) //Test 1
+    // @TODO Filter dog supplies
+    public void filter_DogSupplies() {
+        driver.get("https://www.amazon.com/s?k=Dog&crid=360VBAZN8LM5W&sprefix=dog+%2Caps%2C240&ref=nb_sb_noss_2");
+
+
+        AmazonProductListPage ProductListPage = new AmazonProductListPage(driver); // Object
+        ProductListPage.filter_Department_DogSupplies_click();
+
+        // Tests
+        Assert.assertEquals(ProductListPage.searchResults_Summary(), "1-24 of over 50,000 results for"); // 1. Checking total results
+        Assert.assertTrue(ProductListPage.filter_AnyDepartment_isDisplayed()); // 1. Checking if Any Department button appears
+    }
+     */
+    /*
+    @Test(priority = 2) //Test 2
+    // @TODO Filter price up to 25
+    public void filter_Price_Upto25() {
+        driver.get("https://www.amazon.com/s?k=Dog&i=pets&rh=n%3A2975312011&dc&crid=360VBAZN8LM5W&qid=1658084975&sprefix=dog+%2Caps%2C240&ref=sr_ex_p_36_0&ds=v1%3AWm34fZH1QwZqBd6DtQLigwSqmOKPDB4sv%2B9L63gVjO4");
+
+        AmazonProductListPage ProductListPage = new AmazonProductListPage(driver); // Object
+        ProductListPage.filter_price_clickByText("Up to $25");
+
+        // Tests
+        Assert.assertTrue(ProductListPage.filter_AnyPrice_isDisplayed()); // 1. Checking if Any Price button appears
+    }
+
+     */
+
 }

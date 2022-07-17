@@ -91,7 +91,7 @@ public class A_SonyTests {
     // Filter ship local - Please notice that sometimes filter not appears
     public void filter_Electronics() {
         AmazonProductListPage ProductListPage = new AmazonProductListPage(driver); // Object
-        ProductListPage.filter_Electronics_click();
+        ProductListPage.filter_Department_Electronics_click();
 
         // Tests
         Assert.assertTrue(ProductListPage.filter_AnyDepartment_isDisplayed()); // 1. Checking if Any Department button appears
