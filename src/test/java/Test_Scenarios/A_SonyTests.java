@@ -1,6 +1,5 @@
 package Test_Scenarios;
 
-import Objects.AmazonHomepage;
 import Objects.AmazonNavigation;
 import Objects.AmazonProductListPage;
 import Objects.AmazonProductPage;
@@ -12,27 +11,33 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  *                                          Amazon Web
  *    • Page Object Model - working with objects instead of find elements on tests
  *
+ *    Sony Tests:
+ *
  *    Tests:
  *      0. Searching for "Sony" product on amazon web, clicking, and checking the search result
- *      1. Checking all the filter options
+ *      1. filter by ShipLocal
+ *      2. filter by Electronics
+ *      3. filter by CustomerReview 4 stars
+ *      4. Select first product
+ *      5. Select color
+ *      6. Select product image
+ *      7. See all buy options
+ *      8. Add to cart
  *
  *
  *
  *      TODO:
  *      1. Use cssSelector instead of xpath - V
- *      2. change name of functions to more specific
- *      3. Log before every function (check about logger)
+ *      2. change name of functions to more specific - V
+ *      3. Log before every function - need to check about loggers, will use on next project
  *      4. wait instead of Thread.sleep - Not working - tried with driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); - not waiting
  *      5. Check about HashMap
- *
  */
-public class SonyTests {
+public class A_SonyTests {
     WebDriver driver;
 
     @BeforeTest
@@ -57,9 +62,7 @@ public class SonyTests {
 
     }
 
-    /**
-     * Tests:
-     */
+    /**Tests:*/
     @Test(priority = 0) //Test 0
     // Homepage to "Sony" search
     public void searchSony() {
@@ -141,7 +144,7 @@ public class SonyTests {
 
     @Test (priority = 6) // Test 6
     // Selecting product image
-    public void product_imgage_6(){
+    public void product_image_6(){
         AmazonProductPage ProductPage = new AmazonProductPage(driver); // Object
         ProductPage.imgvid_ClickById(3);
     }
