@@ -1,4 +1,4 @@
 # AmazonProject
-Selenium Java - Automation on amazon
+Selenium Java - Automation on amazon web
 
 Using POM Model
