@@ -41,12 +41,12 @@ public class AmazonProductPage {
     // Product
     By title = By.xpath("//span[@id='productTitle']"); // OK
 
-    By color_Selected = By.xpath("//span[@class='selection']"); // OK
+    //By color_Selected = By.xpath("//span[@class='selection']"); // OK - OLD
+    By color_Selected = By.cssSelector("#variation_color_name > div > span");
+
 
     // Purchase
     By purchase_SeeAllBuyOptions = By.xpath("//a[@title='See All Buying Options']"); // OK
-
-    By purchase_SeeAllBuyOptions_Open = By.xpath("//body[@style='overflow: scroll;']"); // In progress
 
     /** Actoions */
 

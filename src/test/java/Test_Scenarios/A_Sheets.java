@@ -153,4 +153,31 @@ public class A_Sheets {
 
      */
 
+    @Test(priority = 3) // Test 3
+    public void product_SelectCollar() {
+        driver.get("https://www.amazon.com/s?k=Dog&i=pets&rh=n%3A2975312011%2Cp_36%3A2661612011&dc&ds=v1%3AixLsl5fPHjM6az1BK86ErGEOOpuKKQxKvO6Bz2xASGk&crid=37KGVBN2UQOYV&qid=1659120946&rnid=2661611011&sprefix=dog%2Caps%2C885&ref=sr_nr_p_36_1");
+
+        AmazonProductListPage ProductListPage = new AmazonProductListPage(driver); // Object
+        ProductListPage.product_Click_FirstByText("Vest");
+
+        // Tests
+        /* Currently selected product is: (may changed)
+            Product: DAGANXI Tactical Dog Collar, Adjustable Military Training Nylon Dog Collar with Control Handle and Heavy Metal Buckle for Medium and Large Dogs, with Patches and Airtags Case (L, Black)
+            URL: https://www.amazon.com/DAGANXI-Tactical-Adjustable-Military-Training/dp/B0962R78HN/ref=sr_1_6?crid=1N2EPB8KHWI2H&keywords=Dog&qid=1658051244&refinements=p_36%3A2661612011&rnid=2661611011&s=pet-supplies&sprefix=dog%2Caps%2C540&sr=1-6
+        */
+        AmazonProductPage ProductPage = new AmazonProductPage(driver); // Object
+
+        // String initial
+        String expectedProduct = "DAGANXI Tactical Dog Collar, Adjustable Military Training Nylon Dog Collar with Control Handle and Heavy Metal Buckle for Medium and Large Dogs, with Patches and Airtags Case (L, Black)";
+        expectedProduct = expectedProduct.toLowerCase();
+        String actualProduct = ProductPage.title_GetText_toLowerCase();
+
+        // String substring
+        int substringAt = 20;
+        expectedProduct = expectedProduct.substring(0, substringAt);
+        actualProduct = actualProduct.substring(0, substringAt);
+
+        Assert.assertEquals(actualProduct, expectedProduct); // 1. Checking if the title of the selected product matches
+    }
+
 }

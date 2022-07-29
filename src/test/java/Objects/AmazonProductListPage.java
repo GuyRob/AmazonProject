@@ -131,7 +131,6 @@ public class AmazonProductListPage {
 
     }
 
-    // @TODO - Alot of link text found - can try this: https://stackoverflow.com/questions/64033047/selenium-how-to-select-first-option-if-page-has-multiple-select-box-using-python
     public void product_Click_FirstByText(String text){
         By productSelectByText = By.partialLinkText(text);
 
@@ -181,8 +180,5 @@ public class AmazonProductListPage {
     public String searchResults_Summary(){
         return driver.findElement(search_result_Summary).getText();
     }
-
-
-
 
 }
